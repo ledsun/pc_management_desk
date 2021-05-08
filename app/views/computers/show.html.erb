@@ -1,24 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User name:</strong>
-  <%= @computer.user_name %>
-</p>
+<dt>User name:</dt>
+<dd><%= @computer.user_name %></dd>
 
-<p>
-  <strong>Maker:</strong>
-  <%= @computer.maker %>
-</p>
+<dt>Maker:</dt>
+<dd><%= @computer.maker %></dd>
 
-<p>
-  <strong>Memory:</strong>
-  <%= @computer.memory %>
-</p>
+<dt>Memory:</dt>
+<dd><%= @computer.memory %></dd>
 
-<p>
-  <strong>Release year:</strong>
-  <%= @computer.release_year %>
-</p>
+<dt>Release year:</dt>
+<dd><%= @computer.release_year %></dd>
 
-<%= link_to 'Edit', edit_computer_path(@computer) %> |
-<%= link_to 'Back', computers_path %>
+<%= link_to 'Edit', edit_computer_path(@computer), class: 'btn btn-link' %> |
+<%= link_to 'Back', computers_path, class: 'btn btn-link' %>

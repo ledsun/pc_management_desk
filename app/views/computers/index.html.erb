@@ -2,7 +2,7 @@
 
 <h1>Computers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>User name</th>
@@ -20,9 +20,9 @@
         <td><%= computer.maker %></td>
         <td><%= computer.memory %></td>
         <td><%= computer.release_year %></td>
-        <td><%= link_to 'Show', computer %></td>
-        <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
-        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', computer, class: 'btn btn-link btn-sm' %></td>
+        <td><%= link_to 'Edit', edit_computer_path(computer), class: 'btn btn-link btn-sm' %></td>
+        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-link btn-sm' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Computer', new_computer_path %>
+<%= link_to 'New Computer', new_computer_path, class: 'btn btn-link' %>

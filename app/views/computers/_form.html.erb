@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :user_name %>
-    <%= form.text_field :user_name %>
+    <%= form.text_field :user_name, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :maker %>
-    <%= form.text_field :maker %>
+    <%= form.text_field :maker, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :memory %>
-    <%= form.text_field :memory %>
+    <%= form.text_field :memory, class: "form-control"  %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :release_year %>
-    <%= form.number_field :release_year %>
+    <%= form.number_field :release_year, class: "form-control"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary"%>
   </div>
 <% end %>
