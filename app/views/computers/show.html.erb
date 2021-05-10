@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
+<h1>Computers</h1>
 
-<dt>User name:</dt>
-<dd><%= @computer.user_name %></dd>
-
-<dt>Maker:</dt>
-<dd><%= @computer.maker %></dd>
-
-<dt>Memory:</dt>
-<dd><%= @computer.memory %></dd>
-
-<dt>Release year:</dt>
-<dd><%= @computer.release_year %></dd>
-
-<%= link_to 'Edit', edit_computer_path(@computer), class: 'btn btn-link' %> |
-<%= link_to 'Back', computers_path, class: 'btn btn-link' %>
+<dl>
+  <dt>User name:</dt>
+  <dd><%= @computer.user_name %></dd>
+  <dt>Maker:</dt>
+  <dd><%= @computer.maker %></dd>
+  <dt>Memory:</dt>
+  <dd><%= @computer.memory %></dd>
+  <dt>Release year:</dt>
+  <dd><%= @computer.release_year %></dd>
+</dl>
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>

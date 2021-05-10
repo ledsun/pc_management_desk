@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Computers</h1>
 
-<table class="table">
+<table class="table table-striped table-hover table-sm">
   <thead>
     <tr>
-      <th>User name</th>
-      <th>Maker</th>
-      <th>Memory</th>
-      <th>Release year</th>
-      <th colspan="3"></th>
+      <th scope="col">User name</th>
+      <th scope="col">Maker</th>
+      <th scope="col">Memory</th>
+      <th scope="col">Release year</th>
+      <th colspan="3" scope="col"></th>
     </tr>
   </thead>
 
@@ -20,14 +18,13 @@
         <td><%= computer.maker %></td>
         <td><%= computer.memory %></td>
         <td><%= computer.release_year %></td>
-        <td><%= link_to 'Show', computer, class: 'btn btn-link btn-sm' %></td>
-        <td><%= link_to 'Edit', edit_computer_path(computer), class: 'btn btn-link btn-sm' %></td>
-        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-link btn-sm' %></td>
+        <td><%= link_to 'Show', computer %></td>
+        <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
+        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Computer', new_computer_path, class: 'btn btn-link' %>
+<%= link_to 'New Computer', new_computer_path %>

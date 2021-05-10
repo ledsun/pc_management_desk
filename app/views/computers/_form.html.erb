@@ -1,37 +1,23 @@
-<%= form_with(model: computer) do |form| %>
-  <% if computer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(computer.errors.count, "error") %> prohibited this computer from being saved:</h2>
+<%= form_with(model: @computer, local: true) do |f| %>
+  <%= errors_for(@computer) %>
 
-      <ul>
-        <% computer.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field form-group">
-    <%= form.label :user_name %>
-    <%= form.text_field :user_name, class: "form-control" %>
+  <div class="form-group">
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name, class: 'form-control' %>
   </div>
-
-  <div class="field form-group">
-    <%= form.label :maker %>
-    <%= form.text_field :maker, class: "form-control"  %>
+  <div class="form-group">
+    <%= f.label :maker %>
+    <%= f.text_field :maker, class: 'form-control' %>
   </div>
-
-  <div class="field form-group">
-    <%= form.label :memory %>
-    <%= form.text_field :memory, class: "form-control"  %>
+  <div class="form-group">
+    <%= f.label :memory %>
+    <%= f.text_field :memory, class: 'form-control' %>
   </div>
-
-  <div class="field form-group">
-    <%= form.label :release_year %>
-    <%= form.number_field :release_year, class: "form-control"  %>
+  <div class="form-group">
+    <%= f.label :release_year %>
+    <%= f.number_field :release_year, class: 'form-control' %>
   </div>
-
-  <div class="actions">
-    <%= form.submit class: "btn btn-primary"%>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
