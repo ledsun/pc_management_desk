@@ -13,6 +13,10 @@ ActiveRecord::Base.establish_connection YAML.load(ERB.new(File.read('config/data
 
 model_name = ARGV[0]
 class_name= Object.const_set model_name, Class.new(ActiveRecord::Base)
+puts '@startuml'
+puts "class #{class_name} {"
 class_name.columns.each do |c|
-  printf "%20s %10s \n", c.name, c.type
+  printf "  %8s %s\n", c.type, c.name
 end
+puts '}'
+puts '@enduml'
