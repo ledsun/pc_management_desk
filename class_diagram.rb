@@ -8,8 +8,23 @@ class_name.columns.each do |c|
 end
 
 class_name.public_instance_methods(false).each do |m|
-  printf "  %s(%s)\n", m.to_s, class_name.new.method(m).parameters.filter{ |a| a[0] == :req }.map { |a| a[1]}.join(', ')
+  method_parameters = class_name.new.method(m)
+                                .parameters
+                                .filter{ |a| a[0] == :req }
+                                .map { |a| a[1]}.join(', ')
+  printf "  %s(%s)\n", m.to_s, method_parameters
 end
 
 puts '}'
+
+class_name.reflect_on_all_associations(:belongs_to).each do |a|
+  puts "#{class_name} --* #{a.name.to_s.classify}"
+end
+class_name.reflect_on_all_associations(:has_many).each do |a|
+  puts "#{class_name} *-- #{a.name.to_s.classify}"
+end
+class_name.reflect_on_all_associations(:has_one).each do |a|
+  puts "#{class_name} -- #{a.name.to_s.classify}"
+end
+
 puts '@enduml'
